@@ -1,5 +1,10 @@
-no_of_lines = 3
-input_lines = ''
+input='295743861\n431865927\n876192543\n387459216\n612387495\n549216738\n763524189\n928671354\n154938672'
+sudoku = input.split("\n")
+print(sudoku)
+
+
+
+'''
 for i in range(no_of_lines):
     input_lines += input("Input: ") + "\n"
 
@@ -7,7 +12,6 @@ sudoku_numbers = [i for i in range(1,10)]
 
 sudoku = input_lines.split("\n")[0:no_of_lines]
 
-#What needs to be done?
 def check_input():
     #check if entered input has 9 entries and only digits
     for row in sudoku:
@@ -57,4 +61,4 @@ def check_subsquare():
 check_columns()
 
 check_input()
-check_rows()
+check_rows()'''
