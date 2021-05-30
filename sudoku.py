@@ -1,6 +1,8 @@
-input='295743861\n431865927\n176192543\n387459216\n612387495\n549216738\n763524189\n928671354\n254938672'
+input='295743861\n431865927\n876192543\n387459216\n612387495\n549216738\n763524189\n928671354\n154938672'
 sudoku = input.split("\n")
 sudoku_numbers = [i for i in range(1,10)]
+sudoku_column_list = []
+sudoku_subsquare_list = []
 
 def check_input():
     #check if entered input has 9 entries and only digits
@@ -23,8 +25,8 @@ def check_input():
         else:
             return True
 
-def check_rows():
-    for row in sudoku:
+def check_rows(sudoku_input):
+    for row in sudoku_input:
         for number in sudoku_numbers:
             if row.find(str(number)) == -1:
                 print(number, "missing: no sudoku. This was found in row ", row)
@@ -34,29 +36,33 @@ def check_rows():
     return True
 
 
-'''
 def check_columns():
+    #create a new list made up by the first, second, etc number of each element in list. Use the check_row function to check validity.
+    for number in range(len(sudoku_numbers)):
+        row_string = ''
+        for i in sudoku_numbers:
+            row_string += sudoku[i-1][number]
+        sudoku_column_list.append(row_string)
 
-    for row in range(3):
-
-        for column in range(3):
-            sudoku_column = []
-            sudoku_column.append((sudoku[row][column]))
-    print(sudoku_column)
-
-
-
-        #print(sudoku[column][column])
-
-    pass
-    # check if column has 1 to 9
-
+    check_rows(sudoku_column_list)
 
 def check_subsquare():
-    pass
-    # check if subsquare has 1 to 9
 
-check_columns()
 
-check_input()
-check_rows()'''
+    k = 0
+
+    while k < 9:
+        subsquare_string = ''
+        for i in range(k,3+k):
+
+            for j in range(k,k+3):
+                subsquare_string += sudoku[i][j]
+        sudoku_subsquare_list.append(subsquare_string)
+
+        k += 3
+
+
+    check_rows(sudoku_subsquare_list)
+    print(sudoku_subsquare_list)
+
+check_subsquare()
