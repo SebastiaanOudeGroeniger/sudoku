@@ -7,7 +7,7 @@ sudoku_numbers = [i for i in range(1,10)]
 
 sudoku = input_lines.split("\n")[0:no_of_lines]
 
-
+#What needs to be done?
 def check_input():
     #check if entered input has 9 entries and only digits
     for row in sudoku:
