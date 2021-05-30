@@ -52,7 +52,7 @@ def check_subsquare():
     k = 0
 
     while k < 9:
-        subsquare_string = ''
+        subsquare_string = '' #init substring
         for i in range(k,3+k):
 
             for j in range(k,k+3):
