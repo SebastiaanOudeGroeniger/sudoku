@@ -1,8 +1,6 @@
-input='295743861\n431865927\n176192543\n387459216\n612387495\n549216738\n763524189\n928671354\n154938672'
+input='295743861\n431865927\n176192543\n387459216\n612387495\n549216738\n763524189\n928671354\n254938672'
 sudoku = input.split("\n")
 sudoku_numbers = [i for i in range(1,10)]
-
-
 
 def check_input():
     #check if entered input has 9 entries and only digits
@@ -25,12 +23,6 @@ def check_input():
         else:
             return True
 
-
-
-
-check_input()
-
-'''
 def check_rows():
     for row in sudoku:
         for number in sudoku_numbers:
@@ -38,8 +30,12 @@ def check_rows():
                 print(number, "missing: no sudoku. This was found in row ", row)
                 break
             else:
-                return True
+                continue
+    return True
 
+
+check_rows()
+'''
 def check_columns():
 
     for row in range(3):
