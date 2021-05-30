@@ -34,7 +34,6 @@ def check_rows():
     return True
 
 
-check_rows()
 '''
 def check_columns():
 
